@@ -12,52 +12,88 @@
 </head>
 
 <body><br><br><br><br>
-  <table class="table">
-    <tr>
-      
-      <td class="col-4">
-        <div class="card">
-          <center>
-          <header>
-            <h1>Let's Chat</h1>
-          </header>
+  <center>
+    <header>
+      <h1>Let's Chat</h1>
+    </header>
+  </center>
 
-          <section>
+  <center>
+    <div class="modal active" id="modal-id">
+      <a href="#close" class="modal-overlay" aria-label="Close"></a>
+      <div class="modal-container">
+        <div class="modal-header">
+          <a href="#close" class="btn btn-clear float-right" aria-label="Close"></a>
+          <div class="modal-title h5">Enter Username</div>
+        </div>
+        <div class="modal-body">
+          <div class="content">
             <div id="change_username" class="form-group">
               <input id="username" type="text" class="form-input" /><br>
-              <button id="btnUsername" class="btn" type="button">Change username</button>
+              <button id="btnUsername" class="btn" type="button">Set username</button>
             </div>
-          </section><br><br>
+          </div>
+        </div>
+        <div class="modal-footer">
+          ...
+        </div>
+      </div>
+    </div>
+  </center>
+  <table class="table">
+    <tr>
 
-          <section id="input_zone">
-            <input id="message" class="vertical-align form-input" type="text" /><br>
-            <button id="btnMessage" class="vertical-align btn" type="button">Send</button><br><br>
-          </section>
-        </center>
+      <td class="col-4">
+        <div class="card">
+          <!-- <center>
+            <section id="input_zone">
+              <input id="message" class="vertical-align form-input" type="text" /><br>
+              <button id="btnMessage" class="vertical-align btn" type="button">Send</button><br><br>
+            </section>
+          </center> -->
         </div>
       </td>
       <td class="col-4">
-          <div class="card">
-              <center>
-              <header>
-                <h1>Inbox</h1>
-              </header>
+        <div class="card">
+          <center>
+            <header>
+              <h2>Inbox</h2>
+            </header>
 
-              <section id="inbox">
-                <section id="feedback"></section>
+            <section id="inbox">
+              <section id="feedback"></section>
+            </section>
+
+          </center>
+
+        </div><br><br><br><br>
+        <div class="card">
+          <div class="inpMessage">
+            <center>
+              <section id="input_zone">
+                <input id="message" class="vertical-align form-input" type="text" /><br>
+                <button id="btnMessage" class="vertical-align btn" type="button">Send</button><br><br>
               </section>
-     
             </center>
-            </div>
+          </div>
+        </div>
       </td>
-      <td class="col-4"></td>
+      <td class="col-4">
+        <div class="card">
+          <center>
+            <header>
+              <h2>Active Users</h2>
+            </header>
+          </center>
+        </div>
+      </td>
     </tr>
   </table>
 
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
   <script>
-    $(function () {
+    $(document).ready(function () {
       var socket = io.connect('http://localhost:3000')
 
       var message = $("#message")
@@ -66,6 +102,12 @@
       var btnUsername = $("#btnUsername")
       var inbox = $("#inbox")
       var feedback = $("#feedback")
+
+      //close modal
+      $(document).delegate('#btnUsername', 'click', function (e) {
+        $(this).closest('.modal').removeClass('active');
+        e.preventDefault();
+      });
 
       //Emit message
       btnMessage.click(function () {
