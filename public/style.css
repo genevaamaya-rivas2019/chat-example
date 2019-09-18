@@ -20,14 +20,13 @@
 	top: 50%;
 	width: 0;
 	height: 0;
-	border: 36px solid transparent;
+	border: 23px solid transparent;
 	border-right-color: #ff80ff;
 	border-left: 0;
 	border-bottom: 0;
-	margin-top: -18px;
-	margin-left: -36px;
+	margin-top: -11.5px;
+	margin-left: -23px;
 }
-
 .speech-bubble1 {
 	position: relative;
 	background: #ffff80;
@@ -41,12 +40,12 @@
 	top: 50%;
 	width: 0;
 	height: 0;
-	border: 66px solid transparent;
+	border: 30px solid transparent;
 	border-left-color: #ffff80;
 	border-right: 0;
 	border-bottom: 0;
-	margin-top: -33px;
-	margin-right: -66px;
+	margin-top: -15px;
+	margin-right: -30px;
 }
 
   #inbox{
