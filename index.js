@@ -1,4 +1,5 @@
 var app = require('express')();
+var express = require('express');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
@@ -7,6 +8,8 @@ var port = process.env.PORT || 3000;
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/index.html');
 });
+
+app.use(express.static('public'));
 
 io.on('connection', function (socket) {
   socket.on('chat message', function (msg) {
@@ -25,7 +28,7 @@ http.listen(port, function () {
 //listen on every connection
 io.on('connection', (socket) => {
   console.log('New user connected')
-  //var addedUser = false;
+  
   //default username
   socket.username = "Anonymous"
 
@@ -35,34 +38,23 @@ io.on('connection', (socket) => {
     console.log(socket.username)
   })
 
+  socket.on('log_in', (data) => {
+    io.sockets.emit('log_in', data);
+  })
+
+  socket.on('request_user', (data) => {
+    io.sockets.emit('request_user', data);
+  })
+
   //listen on new_message
   socket.on('new_message', (data) => {
     //broadcast the new message
-    io.sockets.emit('new_message', { message: data.message, username: socket.username });
+    io.sockets.emit('new_message', data);
   })
 
   //listen on typing
   socket.on('typing', (data) => {
-    socket.broadcast.emit('typing', { username: socket.username })
+    socket.broadcast.emit('typing', data);
   })
-
-  // socket.on('add user', (username) => {
-  //   if (addedUser) return;
-
-  //   // we store the username in the socket session for this client
-  //   socket.username = username;
-  //   ++numUsers;
-  //   addedUser = true;
-  //   socket.emit('login', {
-  //     numUsers: numUsers
-  //   })
-
-  // echo globally (all clients) that a person has connected
-  //   socket.broadcast.emit('user joined', {
-  //     username: socket.username,
-  //     numUsers: numUsers
-  //   });
-  //   console.log(numUsers);
-  // })
 
 })
