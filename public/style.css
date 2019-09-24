@@ -1,9 +1,13 @@
-#ownMessage{
-    text-align:left;
+.ownMessage{
+    text-align:left!important;
+    margin-left: 20px!important;
     padding: 10px;
+    text-indent: 20px;
   }
-  #othersMessage{
-    text-align:left;
+  .othersMessage{
+    text-align:left!important;
+    margin-left: 20px!important;
+    text-indent: 20px;
     padding:10px;
   }
   .speech-bubble {
@@ -13,7 +17,6 @@
     font-family: Arial;
     font-size: 20px;
     line-height: 120px;
-    text-align: center;
     width: 300px;
     height: 90px;
     border-radius: 10px;
@@ -67,7 +70,7 @@
     font-family: Arial;
     font-size: 20px;
     line-height: 120px;
-    text-align: center;
+     
     width: 300px;
     height: 90px;
     border-radius: 10px;
@@ -123,5 +126,9 @@
      background-image: url(https://media.istockphoto.com/photos/blue-soft-background-picture-id689752378?k=6&m=689752378&s=612x612&w=0&h=6KFi1iqcd5LVwA0bzgrdF1jzSK2fS6hfBqAdcNJnB-c=);
      background-repeat: no-repeat;
      background-size: cover;
-	 }
+   }
+   
+   .card{
+     border-radius: 20px;
+   }
 	 

@@ -46,11 +46,11 @@ $(document).ready(function () {
     socket.on("new_message", (data) => {
         feedback.html('');
         if (data.username == myName) {
-            inbox.append("<p class='speech-bubble1' id='ownMessage'>" + "Me : " + data.message + "</p><br>")
+            $("#inbox").append("<p class='speech-bubble1 ownMessage' id=''>" + "Me : " + data.message + "</p><br clear='all'>")
         }else{
-            inbox.append("<p class='speech-bubble' id='othersMessage'>" + data.username + ": " + data.message + "</p><br>")
+            $("#inbox").append("<p class='speech-bubble othersMessage' id=''>" + data.username + ": " + data.message + "</p><br clear='all'>")
         }
-        $("#inbox").scrollTop($("#inbox")[0].scrollHeight);
+        // $("#inbox").scrollTop($("#inbox")[0].scrollHeight);
     })
 
     //Emit a username
