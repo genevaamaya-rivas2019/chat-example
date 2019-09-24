@@ -56,6 +56,7 @@ $(document).ready(function () {
     //Emit a username
     btnUsername.click(function () {
         socket.emit('change_username', { username: username.val() })
+        $('#Name').append(username.val());
     })
 
     //Emit typing
