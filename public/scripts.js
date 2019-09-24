@@ -46,9 +46,9 @@ $(document).ready(function () {
     socket.on("new_message", (data) => {
         feedback.html('');
         if (data.username == myName) {
-            inbox.append("<p class='speech-bubble1' id='ownMessage'>" + "Me : " + data.message + "</p>")
+            inbox.append("<p class='speech-bubble1' id='ownMessage'>" + "Me : " + data.message + "</p><br>")
         }else{
-            inbox.append("<p class='speech-bubble' id='othersMessage'>" + data.username + ": " + data.message + "</p>")
+            inbox.append("<p class='speech-bubble' id='othersMessage'>" + data.username + ": " + data.message + "</p><br>")
         }
         $("#inbox").scrollTop($("#inbox")[0].scrollHeight);
     })

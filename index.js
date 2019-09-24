@@ -24,8 +24,6 @@ http.listen(port, function () {
 });
 
 
-//var numUsers = 0;
-
 //listen on every connection
 io.on('connection', (socket) => {
   console.log('New user connected')
