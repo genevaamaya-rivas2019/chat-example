@@ -50,13 +50,13 @@ $(document).ready(function () {
         }else{
             $("#inbox").append("<p class='speech-bubble othersMessage' id=''>" + data.username + ": " + data.message + "</p><br clear='all'>")
         }
-        // $("#inbox").scrollTop($("#inbox")[0].scrollHeight);
+        $("#inbox").scrollTop($("#inbox")[0].scrollHeight);
     })
 
     //Emit a username
     btnUsername.click(function () {
         socket.emit('change_username', { username: username.val() })
-        $('#Name').append(username.val());
+        $('#Name').append("&nbsp;&nbsp;" +username.val());
     })
 
     //Emit typing

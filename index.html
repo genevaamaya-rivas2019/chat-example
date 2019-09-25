@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
   <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
   <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
   <link rel="stylesheet" href="style.css">
   <title>Simple Chat App</title>
 </head>
@@ -39,46 +40,33 @@
       </div>
     </div>
   </center>
-  <table class="table">
-    <tr>
-      <td class="col-3">
-        <div class="card">
-          <center>
-            <header>
-              <h2>Inbox</h2>
-            </header>
-            <div id="Name"></div>
-          </center>
+  <div class="card" id="divInbox">
+    <center>
+      <h2>Inbox</h2>
+      <div id="Name"><i class='fas fa-user-circle' style='font-size:48px;color:red'></i></div>
+    </center>
 
-          <section id="inbox">
-            <section id="feedback"></section>
-          </section>
+    <section id="inbox">
+      <section id="feedback"></section>
+    </section>
 
-        </div><br>
-        <div class="card">
-          <div class="inpMessage">
-            <center>
-              <section id="input_zone">
-                <input id="message" class="vertical-align form-input" type="text" /><br>
-                <button id="btnMessage" class="vertical-align btn" type="button">Send</button><br><br>
-              </section>
-            </center>
-          </div>
-        </div>
-      </td>
-      <td class="col-3">
-        <div class="card">
-          <center>
-            <header>
-              <h2>Active Users</h2>
-            </header>
-          </center>
-          <span id="users"></span>
-        </div>
-      </td>
-    </tr>
-  </table>
-
+  </div><br>
+  <div class="card" id="divMessage">
+    <div class="inpMessage">
+      <center>
+        <section id="input_zone">
+          <input id="message" class="vertical-align form-input" type="text" placeholder="Type message here..."/><br>
+          <button id="btnMessage" class="vertical-align btn" type="button">Send</button><br><br>
+        </section>
+      </center>
+    </div>
+  </div>
+  <div class="card" id="divUsers">
+    <center>
+      <h2>Active Users</h2>
+    </center>
+    <section id="users"></section>
+  </div>
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script src="scripts.js"></script>
 </body>
