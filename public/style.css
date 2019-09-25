@@ -1,14 +1,16 @@
 .ownMessage{
     text-align:left!important;
     margin-left: 20px!important;
-    padding: 10px;
+    padding-top: 10px;
     text-indent: 20px;
+    font-size: 15px!important;
   }
   .othersMessage{
     text-align:left!important;
     margin-left: 20px!important;
     text-indent: 20px;
-    padding:10px;
+    padding-top:10px;
+    font-size: 15px!important;
   }
   .speech-bubble {
     position: relative;
@@ -18,7 +20,7 @@
     font-size: 20px;
     line-height: 120px;
     width: 300px;
-    height: 90px;
+    min-height: 20px!important;
     border-radius: 10px;
 	padding: 0px;
 	margin: 10px auto;
@@ -45,9 +47,8 @@
     font-family: Arial;
     font-size: 20px;
     line-height: 120px;
-     
     width: 300px;
-    height: 90px;
+    min-height: 20px!important;
     border-radius: 10px;
 	padding: 0px;
 	float: right;
@@ -102,6 +103,8 @@
 
    #users{
      height: 300px;
+     overflow-y: scroll;
+     padding-left: 20px;
    }
 
    #divInbox, #divMessage{
@@ -116,4 +119,7 @@
     margin-top: -550px;
   }
    
+  ::-webkit-scrollbar { 
+    display: none; 
+}
 	 

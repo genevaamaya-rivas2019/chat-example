@@ -30,7 +30,7 @@ $(document).ready(function () {
     socket.on('log_in', function (user) {
         if (!users.includes(user)) {
             users.push(user);
-            $('#users').append('<p> 🔵 <i>' + user + '</p>');
+            $('#users').append('<p><i class="fas fa-user" style="font-size:24px;color:rgb(0, 255, 0)"></i>&nbsp;&nbsp;' + user + '</p>');
         }
         // socket.emit("log_in", myName);
     })
@@ -56,7 +56,7 @@ $(document).ready(function () {
     //Emit a username
     btnUsername.click(function () {
         socket.emit('change_username', { username: username.val() })
-        $('#Name').append("&nbsp;&nbsp;" +username.val());
+        $('#Name').append("&nbsp;&nbsp;<b>" +username.val());
     })
 
     //Emit typing
